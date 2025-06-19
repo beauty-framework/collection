@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Beauty\Collection\Contracts;
 
-interface LazyCollectionInterface extends \IteratorAggregate
+interface LazyCollectionInterface extends \IteratorAggregate, ArrayableInterface
 {
     /**
      * @param callable $callback
@@ -41,11 +41,6 @@ interface LazyCollectionInterface extends \IteratorAggregate
      * @return $this
      */
     public function flatMap(callable $callback): static;
-
-    /**
-     * @return array
-     */
-    public function toArray(): array;
 
     /**
      * @return mixed
